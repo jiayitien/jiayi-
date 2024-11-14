@@ -13,39 +13,79 @@
     <script>
         function drawCard() {
             const cards = [
-                "愚者 (The Fool)",
-                "魔術師 (The Magician)",
-                "女祭司 (The High Priestess)",
-                "皇后 (The Empress)",
-                "皇帝 (The Emperor)",
-                // 添加更多塔羅牌
-                "教皇 (The Hierophant)",
-                "戀人 (The Lovers)",
-                "戰車 (The Chariot)",
-                "力量 (The Strength)",
-                "隱士 (The Hermit)",
-                "命運之輪 (The Wheel of Fortune) ",
-                "正義 (Justice)",
-                "吊人 (The Hanged Man)",
-                "死神 (Death)",
-                "節制 (The Mperance)",
-                "惡魔 (The Devil)",
-                "塔 (The Tower) ",
-                "星星 (The Star)",
-                "月亮 (The Moon) ",
-                "太陽 (The Sun)",
-                "審判 (The Judgement)",
-                "世界 (The World)",               
-
-
+    { name: "愚者 (The Fool) - 正位", meaning: "代表新的開始、冒險、天真、無憂無慮。" },
+    { name: "愚者 (The Fool) - 逆位", meaning: "代表衝動、冒險過頭、不成熟、缺乏方向感。" },
+    
+    { name: "魔術師 (The Magician) - 正位", meaning: "象徵潛力、創造力、行動力和決心。" },
+    { name: "魔術師 (The Magician) - 逆位", meaning: "代表缺乏計劃、欺騙和操控的風險。" },
+    
+    { name: "女祭司 (The High Priestess) - 正位", meaning: "象徵智慧、直覺、神秘和靜默的力量。" },
+    { name: "女祭司 (The High Priestess) - 逆位", meaning: "代表內在的不安、隱藏的秘密或過度依賴他人。" },
+    
+    { name: "皇后 (The Empress) - 正位", meaning: "代表豐收、愛情、母性、創造力和自然的力量。" },
+    { name: "皇后 (The Empress) - 逆位", meaning: "象徵焦慮、情緒不穩、創意受阻和自我保護的需要。" },
+    
+    { name: "皇帝 (The Emperor) - 正位", meaning: "象徵權威、秩序、穩定性和領導力。" },
+    { name: "皇帝 (The Emperor) - 逆位", meaning: "代表過度控制、僵化或缺乏自律的情況。" },
+    
+    { name: "教皇 (The Hierophant) - 正位", meaning: "象徵傳統、教育、指導和信仰。" },
+    { name: "教皇 (The Hierophant) - 逆位", meaning: "代表反叛、非傳統或自我教育的傾向。" },
+    
+    { name: "戀人 (The Lovers) - 正位", meaning: "象徵愛情、選擇、和諧和互相理解。" },
+    { name: "戀人 (The Lovers) - 逆位", meaning: "代表不和、誘惑、衝突和選擇困難。" },
+    
+    { name: "戰車 (The Chariot) - 正位", meaning: "代表意志力、控制、前進和勝利。" },
+    { name: "戰車 (The Chariot) - 逆位", meaning: "象徵失控、障礙、不確定性和缺乏目標。" },
+    
+    { name: "力量 (Strength) - 正位", meaning: "代表勇氣、忍耐、自信和內在的力量。" },
+    { name: "力量 (Strength) - 逆位", meaning: "象徵恐懼、自卑和缺乏自制。" },
+    
+    { name: "隱士 (The Hermit) - 正位", meaning: "象徵智慧、內省、指導和獨立。" },
+    { name: "隱士 (The Hermit) - 逆位", meaning: "代表孤立、退縮或不願意面對現實。" },
+    
+    { name: "命運之輪 (The Wheel of Fortune) - 正位", meaning: "象徵變化、循環、好運和命運的轉變。" },
+    { name: "命運之輪 (The Wheel of Fortune) - 逆位", meaning: "代表不確定性、逆境或不順的循環。" },
+    
+    { name: "正義 (Justice) - 正位", meaning: "象徵公平、平衡、法律和正義。" },
+    { name: "正義 (Justice) - 逆位", meaning: "代表不公平、偏見和責任未被承擔。" },
+    
+    { name: "吊人 (The Hanged Man) - 正位", meaning: "代表犧牲、放下、啟示和新的視角。" },
+    { name: "吊人 (The Hanged Man) - 逆位", meaning: "象徵遲疑、受限或不願意改變的態度。" },
+    
+    { name: "死神 (Death) - 正位", meaning: "象徵結束、轉變和新生的開始。" },
+    { name: "死神 (Death) - 逆位", meaning: "代表抗拒改變、停滯和害怕失去。" },
+    
+    { name: "節制 (Temperance) - 正位", meaning: "象徵平衡、節制、和諧和耐心。" },
+    { name: "節制 (Temperance) - 逆位", meaning: "代表不平衡、過度或衝動的行為。" },
+    
+    { name: "惡魔 (The Devil) - 正位", meaning: "象徵誘惑、束縛、物質和依賴。" },
+    { name: "惡魔 (The Devil) - 逆位", meaning: "代表解脫、釋放或克服依賴的力量。" },
+    
+    { name: "塔 (The Tower) - 正位", meaning: "象徵突然的變化、崩潰和覺醒。" },
+    { name: "塔 (The Tower) - 逆位", meaning: "代表避免災難、延遲或內在的動蕩。" },
+    
+    { name: "星星 (The Star) - 正位", meaning: "代表希望、靈感、指引和內在平靜。" },
+    { name: "星星 (The Star) - 逆位", meaning: "象徵失望、缺乏方向或自我懷疑。" },
+    
+    { name: "月亮 (The Moon) - 正位", meaning: "象徵直覺、夢想、隱藏和未知的力量。" },
+    { name: "月亮 (The Moon) - 逆位", meaning: "代表混亂、不安、或謊言被揭露。" },
+    
+    { name: "太陽 (The Sun) - 正位", meaning: "象徵快樂、成功、光明和積極。" },
+    { name: "太陽 (The Sun) - 逆位", meaning: "代表挫折、延遲或過度自信。" },
+    
+    { name: "審判 (Judgement) - 正位", meaning: "象徵覺醒、寬恕、決策和重新開始。" },
+    { name: "審判 (Judgement) - 逆位", meaning: "代表遲疑、逃避責任或自我批評。" },
+    
+    { name: "世界 (The World) - 正位", meaning: "象徵完成、成就、和諧與整合。" },
+    { name: "世界 (The World) - 逆位", meaning: "代表未完成、停滯或缺乏方向感。" }
 
              
           
             ];
             const randomIndex = Math.floor(Math.random() * cards.length);
             const randomCard = cards[randomIndex];
-            document.getElementById("result").innerText = "你抽到的是：" + randomCard;
-        }
+            document.getElementById("result").innerHTML = `你抽到的是：${randomCard.name}<br><br>意義：${randomCard.meaning}`;
+}
     </script>
 </body>
 </html>
